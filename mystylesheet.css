@@ -1,38 +1,53 @@
- body {
-            font-family: Arial, times new roman;
-            margin: 10;
-            padding: 10;
-        }
-        .navbar {
-            background-color: #186;
-          
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align:LEFT;
-            padding: 10px 10px;
-            text-decoration:BOLD ;
-        }
-        .main-content {
-            padding: 20px;
-        }
-        .footer {
-            background-color: #186;
-            color: thistle;
-            text-align:CENTER;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-		.chapters {
-       font-size:26;
-	   font: times new roman;
-	   align:left;
-    background-color:#184 ;
-    color: pale rose ;
-	   TEXT COLOR:BLACK; }
-	   }
-    
+body {
+    font-family: 'Arial', 'Times New Roman', serif;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.navbar {
+    background-color: #2e8b57; /* soft green */
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: left;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #3cb371;
+    color: #f0f0f0;
+}
+
+.main-content {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #2e8b57;
+    color: #f0e6f6;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+}
+
+.chapters {
+    font-size: 26px;
+    font-family: 'Times New Roman', serif;
+    text-align: left;
+    background-color: #e0f2f1; /* soft aqua */
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
