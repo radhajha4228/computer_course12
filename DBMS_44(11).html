@@ -477,17 +477,107 @@ int square(int num)
 </div>
 
 <div class="question">
-  <h3>4. Recursive Function</h3>
-  <p>A recursive function is a function that calls itself, either directly or indirectly, to solve a problem. Recursion is often used when a problem can be broken down into smaller, similar subproblems.</p>
-  <p><strong>Example: Factorial Calculation</strong></p>
-  <pre class="code-snippet"><code>int factorial(int n) {
-  if (n == 0 || n == 1) {
-    return 1;
-  } else {
-    // Recursive call
-    return n * factorial(n - 1);
-  }
-}</code></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Code: Factorial using Recursion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+            color: #333;
+        }
+        .code-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .code-comment {
+            color: #888;
+        }
+        .code-keyword {
+            color: #569cd6; /* Blue for keywords */
+        }
+        .code-include {
+            color: #9cd656; /* Green for include directives */
+        }
+        .code-string {
+            color: #d6943c; /* Orange for strings */
+        }
+        .code-function {
+            color: #dcdcaa; /* Yellow for function names */
+        }
+        .code-type {
+            color: #4ec9b0; /* Teal for data types */
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="code-container">
+    <h2>C Program: Factorial Calculation using Recursion</h2>
+    <pre>
+<span class="code-include">#include &lt;stdio.h&gt;</span>
+
+<span class="code-comment">// Function prototype for the recursive factorial calculation</span>
+<span class="code-type">long long</span> <span class="code-function">factorial</span>(<span class="code-type">int</span> n);
+
+<span class="code-type">int</span> <span class="code-function">main</span>() {
+    <span class="code-type">int</span> num;
+    <span class="code-type">long long</span> result;
+
+    <span class="code-function">printf</span>(<span class="code-string">"Enter a non-negative integer: "</span>);
+    <span class="code-function">scanf</span>(<span class="code-string">"%d"</span>, &amp;num);
+
+    <span class="code-comment">// Check if the number is negative</span>
+    <span class="code-keyword">if</span> (num &lt; 0) {
+        <span class="code-function">printf</span>(<span class="code-string">"Factorial is not defined for negative numbers.\n"</span>);
+    } <span class="code-keyword">else</span> {
+        result = <span class="code-function">factorial</span>(num);
+        <span class="code-function">printf</span>(<span class="code-string">"Factorial of %d = %lld\n"</span>, num, result);
+    }
+    <span class="code-function">printf</span>(<span class="code-string">"EXECUTED BY RADHA JHA"</span>);
+    <span class="code-keyword">return</span> 0;
+}
+<span class="code-comment">// Recursive function to calculate the factorial</span>
+<span class="code-type">long long</span> <span class="code-function">factorial</span>(<span class="code-type">int</span> n) {
+    <span class="code-comment">// Base case: Factorial of 0 and 1 is 1</span>
+    <span class="code-keyword">if</span> (n == 0 || n == 1) {
+        <span class="code-keyword">return</span> 1;
+    } 
+    <span class="code-comment">// Recursive step: n * factorial(n-1)</span>
+    <span class="code-keyword">else</span> {
+        <span class="code-keyword">return</span> n * <span class="code-function">factorial</span>(n - 1);
+    }
+}
+    </pre>
+  <img src="recursiveimage.jpg" alt="recursive function execution">
+
+</div>
+</body>
+</html>
 </div>
 
 <div class="question">
