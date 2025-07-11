@@ -364,10 +364,58 @@ DELETE FROM students WHERE Id = 2;
   <p>A <strong>Function</strong> in C is a self-contained block of code designed to perform a specific task. Functions promote code reusability, modularity, and easier debugging.</p>
   <ul>
     <li><strong>Definition:</strong> The actual body of the function that performs the task.</li>
-    <li><strong>Syntax:</strong>
-      <pre class="code-snippet"><code>return_type function_name(parameters) {
-  // function body
-}</code></pre>
+    <li><strong>Syntax:</strong><!DOCTYPE html>
+<html>
+<head>
+  <title>C Program: Square of a Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    pre {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>C Program to Find Square of a Number</h1>
+  <p><strong>Executed by:</strong> Radha Jha</p>
+
+  <pre><code>#include &lt;stdio.h&gt;
+
+// Function declaration
+int square(int num);
+
+int main() {
+    int number, result;
+
+    printf("Enter a number: ");
+    scanf("%d", &amp;number);
+
+    result = square(number); // Function call
+
+    printf("Square of %d is %d\n", number, result);
+    printf("Executed by Radha Jha");
+    return 0;
+}
+
+// Function definition
+int square(int num) 
+{
+    return num * num;
+}
+</code></pre>
+  <img src="image.jpg" alt="function use in c" width="300" height="200">
     </li>
     <li><strong>Types:</strong>
       <ul>
