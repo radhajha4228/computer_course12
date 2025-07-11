@@ -5,72 +5,165 @@
   <title>Database Concepts and C Programming Notes</title>
   <link rel="stylesheet" href="mystylesheet.css">
   <style>
+    /* Internal CSS Start */
+
+    /* Global variables for color palette */
+    :root {
+        --primary-blue: #2c3e50;
+        --secondary-green: #3498db;
+        --accent-teal: #1abc9c;
+        --background-light: #ecf0f1;
+        --card-background: #ffffff;
+        --text-dark: #34495e;
+        --text-light: #ecf0f1;
+        --border-color: #bdc3c7;
+        --code-bg: #f5f7fa;
+        --link-color: #3498db;
+    }
+
+    /* Basic Styles */
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
+        font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        padding: 0;
     }
+
     h1, h2, h3 {
-      color: #2c3e50;
+        color: var(--primary-blue);
+        margin-top: 1.5rem;
+        font-weight: 600;
     }
+
+    /* Header & Navigation */
     h1 {
-      border-bottom: 2px solid #333;
+        font-size: 2.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--primary-blue);
+        text-align: center;
+        margin-bottom: 2rem;
     }
-    section {
-      margin-bottom: 30px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0.2,0.3,0.1);
+
+    h2 {
+        font-size: 2rem;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
     }
+
+    h3 {
+        font-size: 1.5rem;
+        color: var(--secondary-green);
+    }
+
     .container {
-      max-width: 1200px;
-      margin: 10 auto;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
     }
+
     .navbar {
-      background-color: #333;
-      padding: 15px;
-      color: Thistle;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        background-color: var(--primary-blue);
+        padding: 15px 30px;
+        color: var(--text-light);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     .navbar h1 {
-      color: grey;
-      margin: 0;
-      border-bottom: none;
+        color: var(--text-light);
+        margin: 0;
+        border-bottom: none;
+        font-size: 1.8rem;
     }
+
     .navbar a {
-      color: thistle;
-      text-decoration: none;
-      padding: 0 15px;
+        color: var(--accent-teal);
+        text-decoration: none;
+        padding: 0 15px;
+        transition: color 0.3s ease;
     }
+
+    .navbar a:hover {
+        color: var(--background-light);
+    }
+
     .chapters ul {
-      list-style-type: none;
-      padding: 0;
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
     }
-    .chapters li {
-      margin-bottom: 5px;
+
+    .chapters p {
+        color: var(--text-light);
+        font-size: 0.8rem;
+        margin-top: 5px;
     }
+
+    /* Main Content Section */
+    section {
+        margin: 30px 20px;
+        background: var(--card-background);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Notes Blocks (Question) */
     .question {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        border-left: 5px solid var(--accent-teal);
+        border-radius: 8px;
+        background-color: var(--code-bg);
     }
+
+    .question h3 {
+        margin-top: 0;
+    }
+
+    /* Code Snippets */
     .code-snippet {
-      background-color: #eee;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
+        background-color: var(--text-dark);
+        color: #e8e8e8;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        font-size: 0.9rem;
+        margin-top: 15px;
     }
+
+    pre {
+        margin: 0;
+    }
+
+    /* Images */
     img {
-      max-width: 100%;
-      height: auto;
-      margin: 10px 0;
-      display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 25px 0;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+
+    /* Emphasis and Links */
+    strong {
+        color: var(--primary-blue);
+    }
+
+    .question b {
+        color: var(--secondary-green);
+    }
+
+    /* Internal CSS End */
   </style>
 </head>
 <body>
@@ -375,4 +468,66 @@ int main() {
 </div>
 </section>
 </body>
-</html>              
+</html>
+   
+</div>
+
+<div class="question">
+  <h3>3. Storage Classes</h3>
+  <p>Storage classes in C determine the scope, visibility, and lifetime of variables and functions.</p>
+  <ul>
+    <li><strong>Automatic (<code>auto</code>):</strong> The default storage class for local variables. Variables are created when the function is called and destroyed when the function exits. They are stored in the stack.</li>
+    <li><strong>External (<code>extern</code>):</strong> Used to declare a global variable defined in another file, making it accessible across multiple source files.</li>
+    <li><strong>Register (<code>register</code>):</strong> Suggests to the compiler that the variable should be stored in a CPU register for faster access, although the compiler may ignore this request. Used for frequently accessed variables.</li>
+    <li><strong>Static (<code>static</code>):</strong>
+      <ul>
+        <li><strong>Local static variables:</strong> Retain their values between function calls. They are initialized only once.</li>
+        <li><strong>Global static variables/functions:</strong> Their scope is limited to the file in which they are defined.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="question">
+  <h3>4. Recursive Function</h3>
+  <p>A recursive function is a function that calls itself, either directly or indirectly, to solve a problem. Recursion is often used when a problem can be broken down into smaller, similar subproblems.</p>
+  <p><strong>Example: Factorial Calculation</strong></p>
+  <pre class="code-snippet"><code>int factorial(int n) {
+  if (n == 0 || n == 1) {
+    return 1;
+  } else {
+    // Recursive call
+    return n * factorial(n - 1);
+  }
+}</code></pre>
+</div>
+
+<div class="question">
+  <h3>5. Passing Array to Function</h3>
+  <p>In C, when an array is passed to a function, it is typically passed by reference (the address of the array's first element is passed), rather than by value. This allows the function to modify the original array.</p>
+  <p><strong>Example: Printing an Array</strong></p>
+  <pre class="code-snippet"><code>void printArray(int arr[], int size) {
+  printf("Array elements: ");
+  for (int i = 0; i < size; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+}
+
+int main() {
+  int myArray[] = {10, 20, 30, 40, 50};
+  int size = sizeof(myArray) / sizeof(myArray[0]);
+  printArray(myArray, size);
+  return 0;
+}</code></pre>
+</div>
+
+<div class="question">
+  <h3>6. Past Year Questions of Functions</h3>
+  <p>Refer to syllabus-based sample questions and previous questions provided in class handouts or practice sets for specific examples related to functions, such as writing functions for sorting, searching, or mathematical operations (e.g., finding the greatest common divisor using recursion).</p>
+</div>
+</section>
+</body>
+</html>
+
+        
