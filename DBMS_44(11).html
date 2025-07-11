@@ -32,7 +32,7 @@
     }
 
     h1, h2, h3 {
-        color: var(--primary-blue);
+        color: var(--deep-blue);
         margin-top: 1.5rem;
         font-weight: 600;
     }
@@ -41,7 +41,7 @@
     h1 {
         font-size: 2.5rem;
         padding-bottom: 0.5rem;
-        border-bottom: 3px solid var(--primary-blue);
+        border-bottom: 3px solid var(--deep-blue);
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -65,7 +65,7 @@
     }
 
     .navbar {
-        background-color: var(--primary-blue);
+        background-color: var(--deep-blue);
         padding: 15px 30px;
         color: var(--text-light);
         display: flex;
@@ -470,64 +470,3 @@ int main() {
 </body>
 </html>
    
-</div>
-
-<div class="question">
-  <h3>3. Storage Classes</h3>
-  <p>Storage classes in C determine the scope, visibility, and lifetime of variables and functions.</p>
-  <ul>
-    <li><strong>Automatic (<code>auto</code>):</strong> The default storage class for local variables. Variables are created when the function is called and destroyed when the function exits. They are stored in the stack.</li>
-    <li><strong>External (<code>extern</code>):</strong> Used to declare a global variable defined in another file, making it accessible across multiple source files.</li>
-    <li><strong>Register (<code>register</code>):</strong> Suggests to the compiler that the variable should be stored in a CPU register for faster access, although the compiler may ignore this request. Used for frequently accessed variables.</li>
-    <li><strong>Static (<code>static</code>):</strong>
-      <ul>
-        <li><strong>Local static variables:</strong> Retain their values between function calls. They are initialized only once.</li>
-        <li><strong>Global static variables/functions:</strong> Their scope is limited to the file in which they are defined.</li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
-<div class="question">
-  <h3>4. Recursive Function</h3>
-  <p>A recursive function is a function that calls itself, either directly or indirectly, to solve a problem. Recursion is often used when a problem can be broken down into smaller, similar subproblems.</p>
-  <p><strong>Example: Factorial Calculation</strong></p>
-  <pre class="code-snippet"><code>int factorial(int n) {
-  if (n == 0 || n == 1) {
-    return 1;
-  } else {
-    // Recursive call
-    return n * factorial(n - 1);
-  }
-}</code></pre>
-</div>
-
-<div class="question">
-  <h3>5. Passing Array to Function</h3>
-  <p>In C, when an array is passed to a function, it is typically passed by reference (the address of the array's first element is passed), rather than by value. This allows the function to modify the original array.</p>
-  <p><strong>Example: Printing an Array</strong></p>
-  <pre class="code-snippet"><code>void printArray(int arr[], int size) {
-  printf("Array elements: ");
-  for (int i = 0; i < size; i++) {
-    printf("%d ", arr[i]);
-  }
-  printf("\n");
-}
-
-int main() {
-  int myArray[] = {10, 20, 30, 40, 50};
-  int size = sizeof(myArray) / sizeof(myArray[0]);
-  printArray(myArray, size);
-  return 0;
-}</code></pre>
-</div>
-
-<div class="question">
-  <h3>6. Past Year Questions of Functions</h3>
-  <p>Refer to syllabus-based sample questions and previous questions provided in class handouts or practice sets for specific examples related to functions, such as writing functions for sorting, searching, or mathematical operations (e.g., finding the greatest common divisor using recursion).</p>
-</div>
-</section>
-</body>
-</html>
-
-        
