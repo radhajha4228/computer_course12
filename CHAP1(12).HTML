@@ -232,8 +232,163 @@
     <li>TINYINT, BOOLEAN, INTEGER</li>
     <li>FLOAT, DOUBLE, DECIMAL</li>
     <li>DATE, DATETIME</li>
-  </ul>
-</section>
+  </ul><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DBMS & C Programming Q&A</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .question {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    code, pre {
+      background: #eaeaea;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: block;
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>DBMS and C Programming Questions & Answers</h1>
+
+  <div class="question">
+    <h2>1. What is Database and DBMS?</h2>
+    <p>A <strong>database</strong> is a collection of organized data.<br>
+    <strong>DBMS (Database Management System)</strong> is software that helps manage databases efficiently.</p>
+    <p><strong>Advantages:</strong> Data integrity, security, reduced redundancy, easy access.<br>
+    <strong>Disadvantages:</strong> Complex setup, expensive, requires technical knowledge.</p>
+  </div>
+
+  <div class="question">
+    <h2>2. File Processing vs DBMS</h2>
+    <ul>
+      <li>File system has data redundancy, DBMS reduces it.</li>
+      <li>File system doesn't support multi-user access well, DBMS does.</li>
+      <li>File system lacks security, DBMS offers controlled access.</li>
+      <li>Data retrieval is slow in file system, fast in DBMS.</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h2>11. SQL Commands</h2>
+    <pre><code>
+-- a. Create table
+CREATE TABLE students (
+  Id INT,
+  Name VARCHAR(50),
+  Class VARCHAR(20),
+  Marks INT
+);
+
+-- b. Insert records
+INSERT INTO students VALUES (1, 'Rachita', '09A', 50);
+INSERT INTO students VALUES (2, 'Riya', '12C', 15);
+
+-- c. Display records
+SELECT * FROM students;
+
+-- d. Update marks
+UPDATE students SET Marks = 95 WHERE Name = 'Rachita';
+
+-- e. Delete record
+DELETE FROM students WHERE Id = 2;
+    </code></pre>
+  </div>
+
+  <div class="question">
+    <h2>12. Define Terms</h2>
+    <ul>
+      <li><strong>Data Dictionary:</strong> Metadata storing structure.</li>
+      <li><strong>Primary Key:</strong> Unique identifier of a row.</li>
+      <li><strong>Relationship:</strong> Link between tables.</li>
+      <li><strong>DML:</strong> Data Manipulation Language (SELECT, INSERT).</li>
+      <li><strong>SQL:</strong> Structured Query Language for database interaction.</li>
+      <li><strong>Data Integrity:</strong> Accuracy and consistency of data.</li>
+      <li><strong>DDL:</strong> Data Definition Language (CREATE, ALTER).</li>
+      <li><strong>Data Security:</strong> Protecting data from unauthorized access.</li>
+      <li><strong>Database System:</strong> System to manage, store, retrieve data.</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h2>Unit 2 - C Programming: Functions</h2>
+
+    <h3>Define Function</h3>
+    <p>A <strong>function</strong> is a block of code to perform a task.</p>
+    <p><strong>Syntax:</strong> <code>returnType functionName(parameters)</code></p>
+
+    <h3>Types of Functions</h3>
+    <ul>
+      <li>Library Functions (e.g., printf)</li>
+      <li>User-defined Functions</li>
+    </ul>
+
+    <h3>Components of a Function</h3>
+    <ul>
+      <li>Function prototype</li>
+      <li>Function call</li>
+      <li>Function definition</li>
+      <li>Return type</li>
+    </ul>
+
+    <h3>Function Categories</h3>
+    <ul>
+      <li><code>int func()</code> – Return type, no argument</li>
+      <li><code>int func(int x)</code> – Return type with argument</li>
+      <li><code>void func()</code> – No return, no argument</li>
+      <li><code>void func(int x)</code> – No return, with argument</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h2>Storage Classes</h2>
+    <ul>
+      <li><strong>Automatic:</strong> Default inside functions</li>
+      <li><strong>External:</strong> Global variable</li>
+      <li><strong>Register:</strong> Stored in CPU register</li>
+      <li><strong>Static:</strong> Retains value between calls</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <h2>Recursive Function Example</h2>
+    <pre><code>
+int factorial(int n) {
+  if(n == 1)
+    return 1;
+  return n * factorial(n - 1);
+}
+    </code></pre>
+  </div>
+
+  <div class="question">
+    <h2>Passing Array to Function Example</h2>
+    <pre><code>
+void printArray(int arr[], int size) {
+  for(int i = 0; i < size; i++)
+    printf("%d ", arr[i]);
+}
+    </code></pre>
+  </div>
+
+</body>
+</html>
+</section>
 </body>
 </html>
