@@ -600,23 +600,37 @@ int square(int num)
 </div>
 
 <div class="question">
-  <h3>5. Passing Array to Function</h3>
-  <p>In C, when an array is passed to a function, it is typically passed by reference (the address of the array's first element is passed), rather than by value. This allows the function to modify the original array.</p>
-  <p><strong>Example: Printing an Array</strong></p>
-  <pre class="code-snippet"><code>void printArray(int arr[], int size) {
-  printf("Array elements: ");
-  for (int i = 0; i < size; i++) {
-    printf("%d ", arr[i]);
-  }
-  printf("\n");
+    <h2>C Code Example: Passing Array to Function</h2>
+    <p>
+        The following C code demonstrates how to pass a one-dimensional array to a function (<code>calculateSum</code>) and calculate the sum of its elements.
+    </p>
+    <pre>
+<span class="include">#include &lt;stdio.h&gt;</span>
+
+<span class="comment">// Function declaration: arr[] indicates an array is being passed,</span>
+<span class="comment">// and n is the size of the array</span>
+<span class="type">int</span> <span class="function">calculateSum</span>(<span class="type">int</span> <span class="variable">arr</span>[], <span class="type">int</span> <span class="variable">n</span>) {
+    <span class="type">int</span> <span class="variable">sum</span> = <span class="number">0</span>;
+    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> < <span class="variable">n</span>; <span class="variable">i</span>++) {
+        <span class="variable">sum</span> += <span class="variable">arr</span>[<span class="variable">i</span>];
+    }
+    <span class="function">printf</span>(<span class="string">"EXECUTED BY RADHA JHA\n"</span>);
+    <span class="keyword">return</span> <span class="variable">sum</span>;
 }
 
-int main() {
-  int myArray[] = {10, 20, 30, 40, 50};
-  int size = sizeof(myArray) / sizeof(myArray[0]);
-  printArray(myArray, size);
-  return 0;
-}</code></pre>
+<span class="type">int</span> <span class="function">main</span>() {
+    <span class="type">int</span> <span class="variable">numbers</span>[] = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>};
+    <span class="type">int</span> <span class="variable">size</span> = <span class="keyword">sizeof</span>(<span class="variable">numbers</span>) / <span class="keyword">sizeof</span>(<span class="variable">numbers</span>[<span class="number">0</span>]); <span class="comment">// Calculate the size of the array</span>
+
+    <span class="comment">// Passing the array name (which acts as a pointer to the first element)</span>
+    <span class="comment">// and the size to the function</span>
+    <span class="type">int</span> <span class="variable">total</span> = <span class="function">calculateSum</span>(<span class="variable">numbers</span>, <span class="variable">size</span>);
+
+    <span class="function">printf</span>(<span class="string">"The sum of the array elements is: %d\n"</span>, <span class="variable">total</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+    </pre> 
 </div>
 
 <div class="question">
