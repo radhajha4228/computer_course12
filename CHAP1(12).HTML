@@ -136,35 +136,19 @@ It serves as an interface between the database and users, ensuring data is store
     <li><strong>Network:</strong> Many-to-many relationships.<P><BR>
 The Network Model in DBMS is a data model that allows the representation of many-to-many relationships in a more flexible and complex structure compared to the Hierarchical Model.<BR>
 It uses a graph structure consisting of nodes (entities) and edges (relationships) to organize data, enabling more efficient and direct access paths.<BR>
-
-Structure and Features<BR>
-
-The network model was formalized by the Database Task Group in the 1960s and is a generalization of the hierarchical model. <BR>
-It can consist of multiple parent segments grouped as levels, with logical associations between segments. These associations form a graph-like structure, allowing more general connections among different nodes.<BR>
-<BR>
-<H5>Key Features:</H5>
-<BR><I>
-Data Relationship Representation: Uses a graph structure to represent data relationships, allowing many-to-many relationships.<BR>
-
-Records and Sets: Data is organized into records (similar to rows in a relational table) and sets (defining relationships between records).<BR>
-
-Owner-Member Relationships: Defines data relationships using owner-member pairs, facilitating complex relationships.<BR>
-
-Navigational Access: Supports navigational data access through predefined paths, different from relational models that use declarative query languages like SQL.<BR>
-</I><H5>
 Advantages:</H5><BR>
 Flexibility: Capable of handling multiple types of relationships (1:1, 1:M, M:N), making it suitable for modeling real-life applications.<BR>
 Efficient Data Access: Allows efficient and direct access to data through multiple paths, reducing data redundancy.<BR>
 Data Integrity: Ensures data integrity through owner-member relationships, preventing members from existing without owners<BR>
-</P><BR><P>
-<H5>Disadvantages:</H5><BR>
+</P><BR>
+<H5>Disadvantages:</H5>
 <I>
 Complexity: The schema or structure is complex due to the use of pointers for navigation, leading to operational anomalies.<BR>
 
 User-Friendliness: The design is not user-friendly and lacks automated query optimization.<BR>
 
 Structural Independence: Fails to achieve structural independence, although it can achieve data independence<BR></I>
-</P></li>Network Model in Database Management Systems (DBMS)
+</li>
     <li><strong>Relational:</strong> Tables with rows and columns.</li>
     <li><strong>Entity-Relationship:</strong> Conceptual representation of data.</li>
   </ul>
@@ -274,5 +258,6 @@ Structural Independence: Fails to achieve structural independence, although it c
 </section>
 </body>
 </html>
+
 
 
