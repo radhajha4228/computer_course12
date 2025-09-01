@@ -727,9 +727,9 @@ int main() {
 
 int factorial(int n) {
     if (n == 0)
-        return 1; // Base case
+        return 1; 
     else
-        return n * factorial(n - 1); // Recursive call
+        return n * factorial(n - 1); 
 }
 
 int main() {
@@ -751,6 +751,179 @@ int main() {
     <li>May lead to high memory use due to multiple function calls (stack usage).</li>
     <li>Can cause performance overhead compared to iterative solutions.</li>
     <li>Risk of stack overflow if base case is not defined properly.</li>
+  </ul>
+</section>
+<section>
+  <h2>Structure in C</h2>
+
+  <h3>Introduction and Syntax</h3>
+  <p>A structure is a user-defined data type in C that allows grouping variables of different types under one name.</p>
+  <pre><code>
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+  </code></pre>
+
+  <h3>Structure Size</h3>
+  <p>The size of a structure is the total size of its members, which may include padding for memory alignment.</p>
+
+  <h3>Accessing Members</h3>
+  <pre><code>
+struct Student s1;
+s1.id = 1;
+strcpy(s1.name, "John");
+s1.marks = 89.5;
+  </code></pre>
+
+  <h3>Nested Structure</h3>
+  <pre><code>
+struct Date {
+    int day, month, year;
+};
+
+struct Student {
+    int id;
+    struct Date dob;
+};
+  </code></pre>
+
+  <h3>Array of Structure</h3>
+  <pre><code>
+struct Student students[3];
+students[0].id = 101;
+  </code></pre>
+
+  <h3>Passing Structure to Function</h3>
+  <pre><code>
+void printStudent(struct Student s) {
+    printf("%d %s %.2f", s.id, s.name, s.marks);
+}
+  </code></pre>
+</section>
+
+<section>
+  <h2>Union in C</h2>
+
+  <h3>Introduction and Syntax</h3>
+  <p>A union is similar to a structure, but all members share the same memory location. Only one member can hold a value at any time.</p>
+  <pre><code>
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+  </code></pre>
+
+  <h3>Comparison Between Structure and Union</h3>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Structure</th>
+        <th>Union</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Each member has its own memory.</td>
+        <td>All members share the same memory.</td>
+      </tr>
+      <tr>
+        <td>Size is sum of all members' sizes.</td>
+        <td>Size is equal to the largest member.</td>
+      </tr>
+      <tr>
+        <td>All members can be used at once.</td>
+        <td>Only one member can be used at a time.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Pointers in C</h2>
+
+  <h3>Introduction and Syntax</h3>
+  <p>A pointer is a variable that stores the memory address of another variable.</p>
+  <pre><code>
+int x = 10;
+int *p = &x;
+  </code></pre>
+
+  <h3>Value and Address</h3>
+  <ul>
+    <li><code>&x</code> gives the address of variable <code>x</code>.</li>
+    <li><code>*p</code> gives the value stored at the pointer address.</li>
+  </ul>
+
+  <h3>Declaration and Initialization</h3>
+  <pre><code>
+int *ptr;
+int value = 5;
+ptr = &value;
+  </code></pre>
+
+  <h3>Pointer and Function Example</h3>
+  <pre><code>
+void printValue(int *p) {
+    printf("%d", *p);
+}
+  </code></pre>
+
+  <h3>Call by Reference Example</h3>
+  <pre><code>
+void update(int *a) {
+    *a = *a + 10;
+}
+int main() {
+    int num = 5;
+    update(&num);
+    printf("%d", num); 
+}
+  </code></pre>
+
+  <h3>Call by Value vs Call by Reference</h3>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Call by Value</th>
+        <th>Call by Reference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Copies the value to function.</td>
+        <td>Passes address to function.</td>
+      </tr>
+      <tr>
+        <td>Changes do not affect original.</td>
+        <td>Changes affect original variable.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Pointer with Arrays Example</h3>
+  <pre><code>
+int arr[3] = {10, 20, 30};
+int *p = arr;
+for (int i = 0; i < 3; i++) {
+    printf("%d ", *(p + i));
+}
+  </code></pre>
+
+  <h3>Advantages of Pointers</h3>
+  <ul>
+    <li>Efficient memory usage.</li>
+    <li>Used in dynamic memory allocation.</li>
+    <li>Supports function arguments by reference.</li>
+  </ul>
+
+  <h3>Disadvantages of Pointers</h3>
+  <ul>
+    <li>Complex syntax can lead to errors.</li>
+    <li>Can lead to memory corruption if not handled properly.</li>
+    <li>Debugging pointer-related bugs can be difficult.</li>
   </ul>
 </section>
 
