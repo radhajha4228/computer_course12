@@ -355,6 +355,77 @@ Structural Independence: Fails to achieve structural independence, although it c
 </section>
   </ul>
 </section>
+<section>
+  <h2>SQL (DDL and DML)</h2>
+  
+  <h3>Data Definition Language (DDL)</h3>
+  <p>DDL commands are used to define and modify database structures such as tables, indexes, and schemas. Common DDL commands include <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, and <code>TRUNCATE</code>.</p>
+  
+  <h3>Data Manipulation Language (DML)</h3>
+  <p>DML commands are used to retrieve, insert, update, and delete data within database tables. Common DML commands include <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code>.</p>
+  
+  <h3>Data Constraints</h3>
+  <ul>
+    <li><strong>NOT NULL:</strong> Ensures that a column cannot have NULL values.</li>
+    <li><strong>UNIQUE:</strong> Ensures that all values in a column are unique.</li>
+    <li><strong>PRIMARY KEY:</strong> Uniquely identifies each record in a table. It is a combination of NOT NULL and UNIQUE.</li>
+    <li><strong>AUTO INCREMENT:</strong> Automatically generates a unique number for new rows, typically used for primary keys.</li>
+  </ul>
+  
+  <h3>Logical Operators</h3>
+  <ul>
+    <li><strong>AND:</strong> Returns true if both conditions are true.</li>
+    <li><strong>OR:</strong> Returns true if at least one condition is true.</li>
+    <li><strong>NOT:</strong> Negates a condition.</li>
+  </ul>
+  
+  <h3>WHERE Clause</h3>
+  <p>The <code>WHERE</code> clause is used to filter records based on specified conditions.</p>
+  <pre><code>SELECT * FROM Students WHERE Age &gt; 18;</code></pre>
+  
+  <h3>ORDER BY Clause</h3>
+  <p>The <code>ORDER BY</code> clause sorts the result set in ascending (default) or descending order.</p>
+  <pre><code>SELECT * FROM Students ORDER BY Name ASC;</code></pre>
+  
+  <h3>SQL JOINs</h3>
+  <p>JOINs combine rows from two or more tables based on related columns.</p>
+  
+  <h4>INNER JOIN</h4>
+  <p>Returns records that have matching values in both tables.</p>
+  <pre><code>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+INNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID
+INNER JOIN Courses ON Enrollments.CourseID = Courses.CourseID;
+  </code></pre>
+  
+  <h4>LEFT JOIN (or LEFT OUTER JOIN)</h4>
+  <p>Returns all records from the left table, and matched records from the right table. If no match, NULL values appear for right table.</p>
+  <pre><code>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+LEFT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID
+LEFT JOIN Courses ON Enrollments.CourseID = Courses.CourseID;
+  </code></pre>
+  
+  <h4>RIGHT JOIN (or RIGHT OUTER JOIN)</h4>
+  <p>Returns all records from the right table, and matched records from the left table. If no match, NULL values appear for left table.</p>
+  <pre><code>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+RIGHT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID
+RIGHT JOIN Courses ON Enrollments.CourseID = Courses.CourseID;
+  </code></pre>
+  
+  <h4>FULL JOIN (or FULL OUTER JOIN)</h4>
+  <p>Returns all records when there is a match in either left or right table. Records without match will have NULLs in place.</p>
+  <pre><code>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+FULL OUTER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID
+FULL OUTER JOIN Courses ON Enrollments.CourseID = Courses.CourseID;
+  </code></pre>
+</section>
 
 <section>
   <h2>Practical Topics</h2>
@@ -377,6 +448,7 @@ Structural Independence: Fails to achieve structural independence, although it c
 </section>
 </body>
 </html>
+
 
 
 
