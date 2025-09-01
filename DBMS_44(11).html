@@ -926,9 +926,164 @@ for (int i = 0; i < 3; i++) {
     <li>Debugging pointer-related bugs can be difficult.</li>
   </ul>
 </section>
+<section>
+  <h2>File Handling in C</h2>
 
+  <h3>Concept of Data File</h3>
+  <p>A data file is a storage medium used to store data permanently. In C, files are used to read and write data to and from disk using file pointers and functions.</p>
+
+  <h3>Need for File Handling</h3>
+  <ul>
+    <li>To store large volumes of data permanently.</li>
+    <li>To avoid re-entering data every time the program runs.</li>
+    <li>To process data externally and efficiently.</li>
+  </ul>
+
+  <h3>Types of Files</h3>
+  <ul>
+    <li><strong>Sequential Files:</strong> Access data in a sequence (line-by-line or byte-by-byte).</li>
+    <li><strong>Random Access Files:</strong> Access any part of the file directly using file pointers.</li>
+  </ul>
+
+  <h3>File Handling Functions in C</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Function</th>
+        <th>Purpose</th>
+        <th>Syntax</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>fopen()</code></td>
+        <td>Opens a file in a specified mode.</td>
+        <td><code>FILE *f = fopen("file.txt", "r");</code></td>
+      </tr>
+      <tr>
+        <td><code>fclose()</code></td>
+        <td>Closes an open file.</td>
+        <td><code>fclose(f);</code></td>
+      </tr>
+      <tr>
+        <td><code>getc()</code></td>
+        <td>Reads a single character from a file.</td>
+        <td><code>char ch = getc(f);</code></td>
+      </tr>
+      <tr>
+        <td><code>putc()</code></td>
+        <td>Writes a single character to a file.</td>
+        <td><code>putc('A', f);</code></td>
+      </tr>
+      <tr>
+        <td><code>fprintf()</code></td>
+        <td>Writes formatted output to a file.</td>
+        <td><code>fprintf(f, "%d", num);</code></td>
+      </tr>
+      <tr>
+        <td><code>fscanf()</code></td>
+        <td>Reads formatted input from a file.</td>
+        <td><code>fscanf(f, "%d", &num);</code></td>
+      </tr>
+      <tr>
+        <td><code>getw()</code></td>
+        <td>Reads an integer from a file.</td>
+        <td><code>int x = getw(f);</code></td>
+      </tr>
+      <tr>
+        <td><code>putw()</code></td>
+        <td>Writes an integer to a file.</td>
+        <td><code>putw(100, f);</code></td>
+      </tr>
+      <tr>
+        <td><code>fgets()</code></td>
+        <td>Reads a string (line) from a file.</td>
+        <td><code>fgets(str, 100, f);</code></td>
+      </tr>
+      <tr>
+        <td><code>fputs()</code></td>
+        <td>Writes a string to a file.</td>
+        <td><code>fputs("Hello", f);</code></td>
+      </tr>
+      <tr>
+        <td><code>fread()</code></td>
+        <td>Reads block of data from file.</td>
+        <td><code>fread(buffer, size, count, f);</code></td>
+      </tr>
+      <tr>
+        <td><code>fwrite()</code></td>
+        <td>Writes block of data to file.</td>
+        <td><code>fwrite(buffer, size, count, f);</code></td>
+      </tr>
+      <tr>
+        <td><code>remove()</code></td>
+        <td>Deletes a file.</td>
+        <td><code>remove("file.txt");</code></td>
+      </tr>
+      <tr>
+        <td><code>rename()</code></td>
+        <td>Renames a file.</td>
+        <td><code>rename("old.txt", "new.txt");</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Random Access File Functions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Function</th>
+        <th>Purpose</th>
+        <th>Syntax</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>fseek()</code></td>
+        <td>Moves the file pointer to a specific location.</td>
+        <td><code>fseek(f, 0, SEEK_SET);</code></td>
+      </tr>
+      <tr>
+        <td><code>rewind()</code></td>
+        <td>Moves the file pointer to the beginning.</td>
+        <td><code>rewind(f);</code></td>
+      </tr>
+      <tr>
+        <td><code>ftell()</code></td>
+        <td>Returns the current position of file pointer.</td>
+        <td><code>long pos = ftell(f);</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>File Opening Modes</h3>
+  <ul>
+    <li><code>"r"</code> - Open for reading.</li>
+    <li><code>"r+"</code> - Open for reading and writing.</li>
+    <li><code>"w"</code> - Open for writing (overwrites file).</li>
+    <li><code>"w+"</code> - Open for reading and writing (overwrites).</li>
+    <li><code>"a"</code> - Open for appending.</li>
+    <li><code>"a+"</code> - Open for reading and appending.</li>
+  </ul>
+
+  <h3>Steps to Work with Files in C</h3>
+  <ol>
+    <li>Define a <code>FILE</code> pointer: <code>FILE *fp;</code></li>
+    <li>Open the file using <code>fopen()</code> with mode.</li>
+    <li>Read, write, or append using file functions.</li>
+    <li>Close the file with <code>fclose()</code>.</li>
+  </ol>
+
+  <h3>End of File (EOF)</h3>
+  <p><code>EOF</code> is a constant used to detect the end of a file when reading.</p>
+  <pre><code>
+while ((ch = getc(f)) != EOF) {
+    putchar(ch);
+}
+  </code></pre>
+</section>
 <div class="question">
-  <h3>6. Past Year Questions of Functions</h3>
+  <h3>Past Year Questions of Functions</h3>
   <p>Refer to syllabus-based sample questions and previous questions provided in class handouts or practice sets for specific examples related to functions, such as writing functions for sorting, searching, or mathematical operations (e.g., finding the greatest common divisor using recursion).</p>
 </div>
 </section>
