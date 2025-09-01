@@ -1081,7 +1081,59 @@ while ((ch = getc(f)) != EOF) {
     putchar(ch);
 }
   </code></pre>
+</section><section>
+  <h2>Typedef Keyword in C</h2>
+
+  <h3>Introduction</h3>
+  <p>
+    The <code>typedef</code> keyword in C is used to create a new name (alias) for an existing data type. It is especially useful for simplifying complex type definitions like structures or pointers.
+  </p>
+
+  <h3>Syntax</h3>
+  <pre><code>typedef existing_type new_type_name;</code></pre>
+
+  <h3>Purpose</h3>
+  <ul>
+    <li>Improve code readability.</li>
+    <li>Make complex types easier to use.</li>
+    <li>Allow consistency in naming across large projects.</li>
+  </ul>
+
+  <h3>Example with Basic Type</h3>
+  <pre><code>
+typedef unsigned int uint;
+
+int main() {
+    uint a = 10;  
+    printf("%u", a);
+    return 0;
+}
+  </code></pre>
+
+  <h3>Example with Structure</h3>
+  <pre><code>
+typedef struct {
+    int id;
+    char name[50];
+} Student;
+
+int main() {
+    Student s1;
+    s1.id = 101;
+    strcpy(s1.name, "John");
+    printf("ID: %d, Name: %s", s1.id, s1.name);
+    return 0;
+}
+  </code></pre>
+
+  <h3>Benefits of Using <code>typedef</code></h3>
+  <ul>
+    <li>Makes code cleaner and more understandable.</li>
+    <li>Reduces errors when working with long or complex type definitions.</li>
+    <li>Helps in platform-independent type declarations (e.g., <code>int32_t</code>, <code>uint64_t</code>).</li>
+  </ul>
 </section>
+
 <div class="question">
   <h3>Past Year Questions of Functions</h3>
   <p>Refer to syllabus-based sample questions and previous questions provided in class handouts or practice sets for specific examples related to functions, such as writing functions for sorting, searching, or mathematical operations (e.g., finding the greatest common divisor using recursion).</p>
