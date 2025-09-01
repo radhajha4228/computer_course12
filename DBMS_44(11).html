@@ -378,6 +378,64 @@ DELETE FROM students WHERE Id = 2;
 </div>
 
 <h2>Unit 2 – C Programming</h2>
+<section>
+  <h2>Functions in C Programming</h2>
+  
+  <h3>Introduction and Syntax</h3>
+  <p>A function is a block of code designed to perform a specific task. It helps in modular programming by dividing a program into smaller, manageable parts.</p>
+  <pre><code>
+return_type function_name(parameter_list) {
+    // function body
+}
+  </code></pre>
+  
+  <h3>Purpose</h3>
+  <ul>
+    <li>To break down complex problems into smaller sub-problems.</li>
+    <li>To promote code reusability.</li>
+    <li>To improve program readability and maintainability.</li>
+  </ul>
+  
+  <h3>Advantages</h3>
+  <ul>
+    <li>Modularity: Functions divide the program into modules.</li>
+    <li>Reusability: Functions can be called multiple times.</li>
+    <li>Easier debugging and testing.</li>
+  </ul>
+  
+  <h3>Components of a Function</h3>
+  <ul>
+    <li><strong>Function Prototype:</strong> Declaration of the function specifying the return type, function name, and parameters.</li>
+    <li><strong>Function Definition:</strong> Actual body of the function where the task is performed.</li>
+    <li><strong>Function Call:</strong> The statement where the function is invoked.</li>
+    <li><strong>Return Statement:</strong> Used to return a value from the function to the caller.</li>
+  </ul>
+  
+  <h3>Function Prototype</h3>
+  <p>Declares the function to the compiler before its actual definition, specifying the return type and parameters.</p>
+  <pre><code>int add(int, int);</code></pre>
+  
+  <h3>Function Definition</h3>
+  <pre><code>
+int add(int a, int b) {
+    return a + b;
+}
+  </code></pre>
+  
+  <h3>Function Call</h3>
+  <p>Invoking the function to execute its code.</p>
+  <pre><code>int sum = add(5, 3);</code></pre>
+  
+  <h3>Return Statement</h3>
+  <p>Used to return the result of the function to the caller.</p>
+  <pre><code>return value;</code></pre>
+  
+  <h3>Types of Functions</h3>
+  <ul>
+    <li><strong>Library Functions:</strong> Predefined functions provided by the C standard library (e.g., <code>printf()</code>, <code>scanf()</code>).</li>
+    <li><strong>User-Defined Functions:</strong> Functions created by the programmer to perform specific tasks.</li>
+  </ul>
+</section>
 
 <div class="question">
   <h3>1. Working with a Function</h3>
