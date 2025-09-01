@@ -136,7 +136,7 @@ It serves as an interface between the database and users, ensuring data is store
     <li><strong>Network:</strong> Many-to-many relationships.<P><BR>
 The Network Model in DBMS is a data model that allows the representation of many-to-many relationships in a more flexible and complex structure compared to the Hierarchical Model.<BR>
 It uses a graph structure consisting of nodes (entities) and edges (relationships) to organize data, enabling more efficient and direct access paths.<BR>
-Advantages:</H5><BR>
+<H5>Advantages:</H5><BR>
 Flexibility: Capable of handling multiple types of relationships (1:1, 1:M, M:N), making it suitable for modeling real-life applications.<BR>
 Efficient Data Access: Allows efficient and direct access to data through multiple paths, reducing data redundancy.<BR>
 Data Integrity: Ensures data integrity through owner-member relationships, preventing members from existing without owners<BR>
@@ -149,8 +149,55 @@ User-Friendliness: The design is not user-friendly and lacks automated query opt
 
 Structural Independence: Fails to achieve structural independence, although it can achieve data independence<BR></I>
 </li>
-    <li><strong>Relational:</strong> Tables with rows and columns.</li>
-    <li><strong>Entity-Relationship:</strong> Conceptual representation of data.</li>
+    <li><strong>Relational:</strong> Tables with rows and columns.<section>
+  <h2>Relational Database Model</h2>
+  <p>The Relational Database Model is a widely used database model that organizes data into tables (also called relations).<BR> Each table consists of rows and columns, where rows represent records (tuples) and columns represent attributes (fields) of the data.</p>
+  <h3>Key Features:</h3>
+  <ul>
+    <li><strong>Tables (Relations):</strong> Data is stored in two-dimensional tables with rows and columns.</li>
+    <li><strong>Rows (Tuples):</strong> Each row in a table represents a single record or entity.</li>
+    <li><strong>Columns (Attributes):</strong> Each column represents a data field or attribute of the entity.</li>
+    <li><strong>Primary Key:</strong> A unique identifier for each record in a table to ensure entity integrity.</li>
+    <li><strong>Foreign Key:</strong> An attribute that creates a link between two tables to maintain referential integrity.</li>
+  </ul>
+
+  <h3>Advantages:</h3>
+  <ul>
+    <li>Simple and easy to understand structure using tables.</li>
+    <li>Flexibility to handle different types of data.</li>
+    <li>Supports powerful query languages like SQL.</li>
+    <li>Ensures data integrity through keys and constraints.</li>
+    <li>Widely supported by many database management systems.</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <p>Consider a <em>Student</em> table with columns such as StudentID, Name, Age, and Course. Each row represents a student record.</p>
+</section>
+</li>
+    <li><strong>Entity-Relationship:</strong> Conceptual representation of data.<section>
+  <h2>Entity-Relationship (ER) Model</h2>
+  <p>The Entity-Relationship (ER) Model is a high-level conceptual data model that describes the structure of a database in terms of entities, attributes, and relationships. It is primarily used for database design and helps visually represent data requirements.</p>
+  
+  <h3>Key Components:</h3>
+  <ul>
+    <li><strong>Entity:</strong> An object or thing in the real world that is distinguishable from others. Entities can be physical objects like a person or book, or concepts like a course or event.</li>
+    <li><strong>Attributes:</strong> Properties or characteristics of an entity. For example, a Student entity might have attributes like StudentID, Name, and Age.</li>
+    <li><strong>Relationships:</strong> Associations between entities. For example, a Student <em>enrolls</em> in a Course.</li>
+    <li><strong>Cardinality:</strong> Specifies the number of instances of one entity related to instances of another entity (e.g., one-to-one, one-to-many, many-to-many).</li>
+  </ul>
+
+  <h3>ER Diagram Symbols:</h3>
+  <ul>
+    <li><strong>Rectangle:</strong> Represents an Entity.</li>
+    <li><strong>Oval:</strong> Represents an Attribute.</li>
+    <li><strong>Diamond:</strong> Represents a Relationship.</li>
+    <li><strong>Lines:</strong> Connect entities to their attributes and relationships.</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <p>A simple ER model might show an entity <em>Student</em> with attributes <em>StudentID</em> and <em>Name</em>, and a relationship <em>Enrolls</em> connecting the <em>Student</em> entity to a <em>Course</em> entity.</p>
+</section>
+</li>
   </ul>
 </section>
 
@@ -258,6 +305,7 @@ Structural Independence: Fails to achieve structural independence, although it c
 </section>
 </body>
 </html>
+
 
 
 
