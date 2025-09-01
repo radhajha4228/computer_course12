@@ -692,6 +692,75 @@ int square(int num)
     </pre> 
     <img src="PASSING ARRAY.jpg" alt="PASSING ARRAY in c" width="300" height="200">
 </div>
+<section>
+  <h2>Variables and Their Scope in C</h2>
+  
+  <h3>Variable Scope</h3>
+  <ul>
+    <li><strong>Local Variables:</strong> Declared inside a function or block and accessible only within that function or block.</li>
+    <li><strong>Global Variables:</strong> Declared outside all functions and accessible throughout the program.</li>
+  </ul>
+  
+  <h3>Storage Classes in C</h3>
+  <p>Storage classes define the lifetime, scope, and visibility of variables.</p>
+  <ul>
+    <li><strong>auto:</strong> Default for local variables, scope limited to block, lifetime is automatic.</li>
+    <li><strong>extern:</strong> Declares a global variable or function defined elsewhere.</li>
+    <li><strong>static:</strong> Preserves variable value between function calls; for local variables, scope is local but lifetime is static.</li>
+    <li><strong>register:</strong> Suggests storing the variable in CPU register for faster access (compiler may ignore).</li>
+  </ul>
+  
+  <h3>Function with Array Example</h3>
+  <p>Passing an array to a function:</p>
+  <pre><code>
+#include &lt;stdio.h&gt;
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i &lt; size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int numbers[] = {1, 2, 3, 4, 5};
+    printArray(numbers, 5);
+    return 0;
+}
+  </code></pre>
+  
+  <h3>Recursive Function</h3>
+  <p>A function that calls itself to solve a smaller instance of the problem.</p>
+  <pre><code>
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0)
+        return 1; // Base case
+    else
+        return n * factorial(n - 1); // Recursive call
+}
+
+int main() {
+    int num = 5;
+    printf("Factorial of %d is %d\n", num, factorial(num));
+    return 0;
+}
+  </code></pre>
+  
+  <h3>Advantages of Recursive Functions</h3>
+  <ul>
+    <li>Simplifies code for problems that can be divided into similar sub-problems.</li>
+    <li>Useful in tree traversal, sorting algorithms, etc.</li>
+  </ul>
+  
+  <h3>Disadvantages of Recursive Functions</h3>
+  <ul>
+    <li>May lead to high memory use due to multiple function calls (stack usage).</li>
+    <li>Can cause performance overhead compared to iterative solutions.</li>
+    <li>Risk of stack overflow if base case is not defined properly.</li>
+  </ul>
+</section>
 
 <div class="question">
   <h3>6. Past Year Questions of Functions</h3>
